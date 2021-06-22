@@ -17,9 +17,15 @@ const app = new Vue(
         methods: {
             nextImg() {
                 this.count++;
+                if(this.count == this.images.length){
+                    this.count = 0
+                }
             },
             precImg() {
                 this.count--;
+                if(this.count < 0){
+                    this.count = this.images.length-1
+                }
             },
 
         }
