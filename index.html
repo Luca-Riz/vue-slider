@@ -19,7 +19,7 @@
         <!-- inizio container -->
         <div class="container">
             
-            <div class="arrow left" @click="precImg">
+            <div class="arrow left pointer" @click="precImg">
                 <i class="fas fa-chevron-left"></i>
             </div>
             
@@ -27,7 +27,7 @@
                 <img :src="images[count]" alt="ant">
             </div>
             
-            <div class="arrow right" @click="nextImg">
+            <div class="arrow right pointer" @click="nextImg">
                 <i class="fas fa-chevron-right"></i>
             </div>
             
@@ -36,7 +36,7 @@
 
         <!--! inizio nav_img -->
         <div class="nav_img">
-            <i :class="(index == count) ? 'attiva' : ''" class="fas fa-circle" v-for="(element,index) in images" @click="navImg(index)"></i>
+            <i :class="(index == count) ? 'attiva' : ''" class="fas fa-circle pointer" v-for="(element,index) in images" @click="navImg(index)"></i>
         </div>        
         <!-- fine nav_img -->
 

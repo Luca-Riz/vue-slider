@@ -42,8 +42,3 @@ const app = new Vue(
             }, 
         }
     });
-
-
-
-
-
