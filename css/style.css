@@ -18,7 +18,7 @@
     transform:translate(-50%, -50%);
     width: 90%;
     height: 90%;
-    border: 1px solid white;
+    border: 1px solid grey;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -40,6 +40,10 @@
     bottom: 2.5%;
     left: 50%;
     transform: translate(-50%, 50%);
-    color: white;
+    color: grey;
+}
+#app .nav_img i {
+    margin: 0 5px;
+    font-size: 70%;
 }
 
