@@ -14,5 +14,10 @@ const app = new Vue(
                 'img/B08.jpg'
             ]
         },
+        methods: {
+            nextImg() {
+                this.count++;
+            }
+        }
     }
 );
