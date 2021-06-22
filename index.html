@@ -34,9 +34,9 @@
         </div>
         <!-- fine container -->
 
-        <!-- inizio nav_img -->
+        <!--! inizio nav_img -->
         <div class="nav_img">
-            <i class="fas fa-circle"></i>
+            <i :class="(index == count) ? 'attiva' : ''" class="fas fa-circle" v-for="(element,index) in images"></i>
         </div>        
         <!-- fine nav_img -->
 
