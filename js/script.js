@@ -1,5 +1,11 @@
 const app = new Vue(
     {
+
+        created : function(){
+            //ogni 3 secondi fai nextImg
+            setInterval(() => this.nextImg(), 3000);
+        },
+
         el: '#app',
         data: {
             count: 0,
@@ -14,23 +20,30 @@ const app = new Vue(
                 'img/B08.jpg'
             ]
         },
-        methods: {
-            nextImg() {
+
+        methods: {    
+
+            nextImg: function() {
                 this.count++;
                 if(this.count == this.images.length){
                     this.count = 0
                 }
             },
-            precImg() {
+
+            precImg: function() {
                 this.count--;
                 if(this.count < 0){
                     this.count = this.images.length-1
                 }
             },
-            navImg(i) {
-                this.count = i;
-            },
 
+            navImg: function(i) {
+                this.count = i;
+            }, 
         }
-    }
-);
+    });
+
+
+
+
+
