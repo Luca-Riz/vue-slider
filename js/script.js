@@ -17,7 +17,11 @@ const app = new Vue(
         methods: {
             nextImg() {
                 this.count++;
-            }
+            },
+            precImg() {
+                this.count--;
+            },
+
         }
     }
 );
