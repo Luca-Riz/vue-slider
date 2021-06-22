@@ -27,9 +27,8 @@ const app = new Vue(
                     this.count = this.images.length-1
                 }
             },
-            navImg() {
-                this.count = element.index;
-
+            navImg(i) {
+                this.count = i;
             },
 
         }
