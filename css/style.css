@@ -27,7 +27,7 @@
 .arrow {
     color: white;
     font-size: 40px;
-    margin: 10px;
+    margin: 5px;
 }
 
 .image {
@@ -37,7 +37,7 @@
 }
 
 .image img {
-    max-width: 100%;
+    max-width: calc(100% - 70px); /* width freccia 25px +5+5 di margin */
     max-height: 100%;
     position: absolute;
     top: 50%;
