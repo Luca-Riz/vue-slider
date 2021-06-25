@@ -1,11 +1,5 @@
 const app = new Vue(
     {
-
-        created : function(){
-            //ogni 3 secondi fai nextImg
-            setInterval(() => this.nextImg(), 3000);
-        },
-
         el: '#app',
         data: {
             count: 0,
@@ -40,5 +34,10 @@ const app = new Vue(
             navImg: function(i) {
                 this.count = i;
             }, 
+        },
+
+        created : function(){
+            //ogni 3 secondi fai nextImg
+            setInterval(() => this.nextImg(), 3000);
         }
     });
