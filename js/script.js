@@ -38,20 +38,22 @@ const app = new Vue(
 
             pausa() {
                 clearInterval(this.interval);
-                console.log(this.interval);
-
+                //! passata la classe completa perchè me la sovrascriveva e restava solo 'attiva'
+                document.getElementById("btnPause").className = "fas fa-pause pointer attiva";
+                document.getElementById("btnPlay").className = "fas fa-play play pointer disattiva";
             },
 
             play() {
                 this.interval = setInterval(this.nextImg, 3000);
+                document.getElementById("btnPause").className = "fas fa-pause pointer disattiva";
+                document.getElementById("btnPlay").className = "fas fa-play play pointer attiva";
             }
 
         },
 
         mounted() {
-            console.log(this.interval);
             this.interval = setInterval(this.nextImg, 3000);
-            console.log(this.interval);
+            document.getElementById("btnPlay").className = "fas fa-play play attiva";
         }
 
     });

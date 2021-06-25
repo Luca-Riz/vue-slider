@@ -63,8 +63,7 @@
     font-size: 70%;
 }
 
-.attiva {
-    color: white;
-}
+.attiva {color: white;}
+.disattiva {color: grey;}
 
 .pointer {cursor: pointer;}
