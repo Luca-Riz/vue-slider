@@ -2,6 +2,8 @@ const app = new Vue(
     {
         el: '#app',
         data: {
+            playCheck: '',
+            pausaCheck: '',
             count: 0,
             interval: '',
             images: [
@@ -13,7 +15,8 @@ const app = new Vue(
                 'img/B06.jpg',
                 'img/B07.jpg',
                 'img/B08.jpg'
-            ]
+            ],
+
         },
 
         methods: {    
@@ -38,22 +41,27 @@ const app = new Vue(
 
             pausa() {
                 clearInterval(this.interval);
-                //! passata la classe completa perchè me la sovrascriveva e restava solo 'attiva'
-                document.getElementById("btnPause").className = "fas fa-pause pointer attiva";
-                document.getElementById("btnPlay").className = "fas fa-play play pointer disattiva";
+                // freccia play grigia
+                this.playCheck = false;
+                // freccia pausa bianca
+                this.pausaCheck = true;
             },
 
             play() {
                 this.interval = setInterval(this.nextImg, 3000);
-                document.getElementById("btnPause").className = "fas fa-pause pointer disattiva";
-                document.getElementById("btnPlay").className = "fas fa-play play pointer attiva";
+                // freccia play bianca
+                this.playCheck = true;
+                // freccia pausa grigia
+                this.pausaCheck = false;
             }
 
         },
 
+        // all'apertura del file faccio partire il setInteval
         mounted() {
             this.interval = setInterval(this.nextImg, 3000);
-            document.getElementById("btnPlay").className = "fas fa-play play attiva";
+            // ..e setto su true il valore playcheck (freccia play bianca)
+            this.playCheck = true;
         }
 
     });

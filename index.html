@@ -36,9 +36,10 @@
 
         <!--! inizio nav_img -->
         <div class="nav_img">
-            <i id="btnPause" class="fas fa-pause pointer" @click="pausa"></i>
+            <i id="btnPause" class="fas fa-pause pointer" @click="pausa" :class="(pausaCheck == true) ? 'attiva' : 'disattiva'"></i>
             <i :class="(index == count) ? 'attiva' : ''" class="fas fa-circle pointer" v-for="(element,index) in images" @click="navImg(index)"></i>
-            <i id="btnPlay" class="fas fa-play play pointer" @click="play"></i>
+            <i id="btnPlay" class="fas fa-play pointer" @click="play" 
+            :class="(playCheck == true) ? 'attiva' : 'disattiva'"></i>
         </div>        
         <!-- fine nav_img -->
 
