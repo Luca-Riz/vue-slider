@@ -23,7 +23,7 @@
                 <i class="fas fa-chevron-left"></i>
             </div>
             
-            <div class="image" onclick="myStopFunction()">
+            <div class="image" @click="pausa">
                 <img :src="images[count]" alt="ant">
             </div>
             
@@ -37,6 +37,7 @@
         <!--! inizio nav_img -->
         <div class="nav_img">
             <i :class="(index == count) ? 'attiva' : ''" class="fas fa-circle pointer" v-for="(element,index) in images" @click="navImg(index)"></i>
+            <i class="fas fa-play pointer play" @click="play"></i>
         </div>        
         <!-- fine nav_img -->
 

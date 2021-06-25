@@ -18,31 +18,40 @@ const app = new Vue(
 
         methods: {    
 
-            nextImg: function() {
+            nextImg() {
                 this.count++;
                 if(this.count == this.images.length){
                     this.count = 0
                 }
             },
 
-            precImg: function() {
+            precImg() {
                 this.count--;
                 if(this.count < 0){
                     this.count = this.images.length-1
                 }
             },
 
-            navImg: function(i) {
+            navImg(i) {
                 this.count = i;
             }, 
 
-             myStopFunction: function() {
-                clearInterval(this.created);
-              }
+            pausa() {
+                clearInterval(this.interval);
+                console.log(this.interval);
+
+            },
+
+            play() {
+                this.interval = setInterval(this.nextImg, 3000);
+            }
+
         },
 
         mounted() {
+            console.log(this.interval);
             this.interval = setInterval(this.nextImg, 3000);
+            console.log(this.interval);
         }
 
     });
