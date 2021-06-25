@@ -3,6 +3,7 @@ const app = new Vue(
         el: '#app',
         data: {
             count: 0,
+            interval: '',
             images: [
                 'img/B01.jpg',
                 'img/B02.jpg',
@@ -34,10 +35,14 @@ const app = new Vue(
             navImg: function(i) {
                 this.count = i;
             }, 
+
+             myStopFunction: function() {
+                clearInterval(this.created);
+              }
         },
 
-        created : function(){
-            //ogni 3 secondi fai nextImg
-            setInterval(() => this.nextImg(), 3000);
+        mounted() {
+            this.interval = setInterval(this.nextImg, 3000);
         }
+
     });
